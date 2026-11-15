@@ -1,1 +1,49 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" viewBox="66.993 897.484 26 26"><linearGradient id="a" x1=".148" x2=".845" y1=".851" y2=".154" gradientTransform="matrix(26.301 0 0 26.331 90.674 911.757)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#0071ff"/><stop offset="1" stop-color="#00bfe1"/></linearGradient><defs><linearGradient xlink:href="#a" id="b" x1=".148" x2=".845" y1=".851" y2=".154" gradientTransform="matrix(26.00048 0 0 25.99935 66.993 897.485)" gradientUnits="userSpaceOnUse"/></defs><path fill="url(#b)" d="m89.318 903.552-2.135 2.122c-.376.337-.558.879-.347 1.337 1.422 2.976.882 6.524-1.452 8.856-2.335 2.331-5.887 2.87-8.866 1.449-.439-.197-.954-.03-1.292.312l-2.17 2.167a1.154 1.154 0 0 0 .208 1.81 13.005 13.005 0 0 0 15.91-1.912 12.97 12.97 0 0 0 1.956-15.887 1.154 1.154 0 0 0-1.812-.254zm-18.467-2.305a12.969 12.969 0 0 0-2.02 15.885 1.154 1.154 0 0 0 1.812.254l2.124-2.11c.385-.336.572-.884.359-1.348-1.423-2.976-.884-6.524 1.451-8.856 2.334-2.332 5.887-2.871 8.866-1.45.434.194.942.033 1.281-.3l2.182-2.18a1.152 1.152 0 0 0-.208-1.81 13.009 13.009 0 0 0-15.893 1.973z"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="100%" height="100%">
+  <defs>
+    <linearGradient id="iconPrimaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F0FF" />
+      <stop offset="50%" stop-color="#0072FF" />
+      <stop offset="100%" stop-color="#7000FF" />
+    </linearGradient>
+
+    <linearGradient id="iconGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F0FF" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#7000FF" stop-opacity="0" />
+    </linearGradient>
+
+    <filter id="iconNeon" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background Squircle -->
+  <rect width="256" height="256" rx="56" fill="#0A0F1D" />
+  <rect width="254" height="254" x="1" y="1" rx="55" fill="none" stroke="url(#iconPrimaryGrad)" stroke-width="2" stroke-opacity="0.4" />
+
+  <!-- Símbolo VyasConect centralizado -->
+  <g transform="translate(48, 48)">
+    <!-- Glow -->
+    <circle cx="80" cy="80" r="60" fill="url(#iconGlow)" opacity="0.2" />
+    
+    <!-- Linhas V -->
+    <line x1="80" y1="130" x2="25" y2="35" stroke="url(#iconPrimaryGrad)" stroke-width="14" stroke-linecap="round" filter="url(#iconNeon)" />
+    <line x1="80" y1="130" x2="135" y2="35" stroke="url(#iconPrimaryGrad)" stroke-width="14" stroke-linecap="round" filter="url(#iconNeon)" />
+
+    <!-- Traço interno de reflexo -->
+    <path d="M 45 42 L 80 105 L 115 42" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" />
+
+    <!-- Nós de Rede -->
+    <circle cx="25" cy="35" r="14" fill="#0A0F1D" stroke="#00F0FF" stroke-width="5" />
+    <circle cx="25" cy="35" r="5" fill="#00F0FF" />
+
+    <circle cx="135" cy="35" r="14" fill="#0A0F1D" stroke="#7000FF" stroke-width="5" />
+    <circle cx="135" cy="35" r="5" fill="#9D4EDD" />
+
+    <circle cx="80" cy="130" r="18" fill="#0A0F1D" stroke="url(#iconPrimaryGrad)" stroke-width="6" />
+    <circle cx="80" cy="130" r="7" fill="#00F0FF" />
+
+    <!-- Ondas Superiores -->
+    <path d="M 60 16 A 26 26 0 0 1 100 16" fill="none" stroke="#00F0FF" stroke-width="4" stroke-linecap="round" opacity="0.8" />
+  </g>
+</svg>
