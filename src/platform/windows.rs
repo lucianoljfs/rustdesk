@@ -2177,7 +2177,18 @@ pub fn get_license_from_exe_name() -> ResultType<CustomServer> {
     if let Ok(portable_exe) = std::env::var(PORTABLE_APPNAME_RUNTIME_ENV_KEY) {
         exe = portable_exe;
     }
-    get_custom_server_from_string(&exe)
+    if let Ok(server) = get_custom_server_from_string(&exe) {
+        if !server.host.is_empty() {
+            return Ok(server);
+        }
+    }
+    // Hardcoded VyasConect Default Server and Key
+    Ok(CustomServer {
+        host: "147.15.104.83".to_owned(),
+        key: "phjeO8chAVZ9l8VwjpQlDEOh2yaaKQTsFe6cwSD4MMo=".to_owned(),
+        api: "".to_owned(),
+        relay: "147.15.104.83:21117".to_owned(),
+    })
 }
 
 // We can't directly use `RegKey::set_value` to update the registry value, because it will fail with `ERROR_ACCESS_DENIED`
