@@ -796,7 +796,8 @@ pub async fn get_rendezvous_server(ms_timeout: u64) -> (String, Vec<String>, boo
     #[cfg(windows)]
     if let Ok(lic) = crate::platform::get_license_from_exe_name() {
         if !lic.host.is_empty() {
-            a = lic.host;
+            a = lic.host.clone();
+            b = vec![lic.host];
         }
     }
     let mut b: Vec<String> = b
@@ -1224,7 +1225,7 @@ pub async fn do_check_software_update() -> hbb_common::ResultType<()> {
 
 #[inline]
 pub fn get_app_name() -> String {
-    hbb_common::config::APP_NAME.read().unwrap().clone()
+    "VyasConect".to_owned()
 }
 
 #[inline]
